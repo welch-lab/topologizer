@@ -47,6 +47,8 @@ from scipy.sparse import csr_matrix, find
 from scipy.sparse.linalg import eigs
 import pandas as pd
 
+#### Note: the diffusion map code is adapted from palantir (https://github.com/dpeerlab/Palantir)
+
 def run_diffusion_maps(data_df, n_components=10, knn=30, n_jobs=-1):
     """Run Diffusion maps using the adaptive anisotropic kernel
     :param data_df: PCA projections of the data or adjancency matrix
@@ -106,6 +108,8 @@ def run_diffusion_maps(data_df, n_components=10, knn=30, n_jobs=-1):
     res['EigenValues'] = pd.Series(res['EigenValues'])
 
     return res
+
+## Note: the functions below are adapted from kmapper (https://github.com/scikit-tda/kepler-mapper)
 
 def set_km_color_map(bin_colors,ncols):
     set_cols = []
